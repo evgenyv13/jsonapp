@@ -1,0 +1,244 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataSource name="dirdb_sqlite3.sqlite3">
+  <database-model serializer="dbm" rdbms="SQLITE" format-version="4.7">
+    <root id="1"/>
+    <schema id="2" parent="1" name="main">
+      <Current>1</Current>
+      <Visible>1</Visible>
+    </schema>
+    <collation id="3" parent="1" name="BINARY"/>
+    <collation id="4" parent="1" name="NOCASE"/>
+    <collation id="5" parent="1" name="RTRIM"/>
+    <table id="6" parent="2" name="django_migrations"/>
+    <table id="7" parent="2" name="sqlite_master">
+      <System>1</System>
+    </table>
+    <table id="8" parent="2" name="sqlite_sequence">
+      <System>1</System>
+    </table>
+    <table id="9" parent="2" name="workspace_classifiedbyrelation"/>
+    <table id="10" parent="2" name="workspace_directory"/>
+    <table id="11" parent="2" name="workspace_directoryitem"/>
+    <table id="12" parent="2" name="workspace_rootdirectory"/>
+    <column id="13" parent="6" name="id">
+      <Position>1</Position>
+      <DataType>integer|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="14" parent="6" name="app">
+      <Position>2</Position>
+      <DataType>varchar(255)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="15" parent="6" name="name">
+      <Position>3</Position>
+      <DataType>varchar(255)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="16" parent="6" name="applied">
+      <Position>4</Position>
+      <DataType>datetime|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <key id="17" parent="6">
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="18" parent="7" name="type">
+      <Position>1</Position>
+      <DataType>text|0</DataType>
+    </column>
+    <column id="19" parent="7" name="name">
+      <Position>2</Position>
+      <DataType>text|0</DataType>
+    </column>
+    <column id="20" parent="7" name="tbl_name">
+      <Position>3</Position>
+      <DataType>text|0</DataType>
+    </column>
+    <column id="21" parent="7" name="rootpage">
+      <Position>4</Position>
+      <DataType>integer|0</DataType>
+    </column>
+    <column id="22" parent="7" name="sql">
+      <Position>5</Position>
+      <DataType>text|0</DataType>
+    </column>
+    <column id="23" parent="8" name="name">
+      <Position>1</Position>
+    </column>
+    <column id="24" parent="8" name="seq">
+      <Position>2</Position>
+    </column>
+    <column id="25" parent="9" name="id">
+      <Position>1</Position>
+      <DataType>integer|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="26" parent="9" name="user_id">
+      <Position>2</Position>
+      <DataType>integer|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="27" parent="9" name="dir_id">
+      <Position>3</Position>
+      <DataType>integer|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <index id="28" parent="9" name="workspace_classifiedbyrelation_dir_id_user_id_9e28fe7b_uniq">
+      <ColNames>dir_id
+user_id</ColNames>
+      <ColumnCollations>
+</ColumnCollations>
+      <Unique>1</Unique>
+    </index>
+    <index id="29" parent="9" name="workspace_c_user_id_b3061d_idx">
+      <ColNames>user_id</ColNames>
+      <ColumnCollations></ColumnCollations>
+    </index>
+    <index id="30" parent="9" name="workspace_classifiedbyrelation_dir_id_de16d24e">
+      <ColNames>dir_id</ColNames>
+      <ColumnCollations></ColumnCollations>
+    </index>
+    <key id="31" parent="9">
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="32" parent="9">
+      <ColNames>dir_id</ColNames>
+      <RefTableName>workspace_directory</RefTableName>
+      <RefColNames>id</RefColNames>
+      <Deferrable>1</Deferrable>
+      <InitiallyDeferred>1</InitiallyDeferred>
+    </foreign-key>
+    <column id="33" parent="10" name="id">
+      <Position>1</Position>
+      <DataType>integer|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="34" parent="10" name="path">
+      <Position>2</Position>
+      <DataType>varchar(256)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="35" parent="10" name="is_busy">
+      <Position>3</Position>
+      <DataType>integer unsigned|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="36" parent="10" name="classifications_amount">
+      <Position>4</Position>
+      <DataType>integer unsigned|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="37" parent="10" name="directory_class">
+      <Position>5</Position>
+      <DataType>text|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="38" parent="10" name="root_dir_id">
+      <Position>6</Position>
+      <DataType>integer|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <index id="39" parent="10" name="workspace_directory_root_dir_id_707ed70b">
+      <ColNames>root_dir_id</ColNames>
+      <ColumnCollations></ColumnCollations>
+    </index>
+    <key id="40" parent="10">
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="41" parent="10">
+      <ColNames>root_dir_id</ColNames>
+      <RefTableName>workspace_rootdirectory</RefTableName>
+      <RefColNames>id</RefColNames>
+      <Deferrable>1</Deferrable>
+      <InitiallyDeferred>1</InitiallyDeferred>
+    </foreign-key>
+    <column id="42" parent="11" name="id">
+      <Position>1</Position>
+      <DataType>integer|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="43" parent="11" name="name">
+      <Position>2</Position>
+      <DataType>varchar(256)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="44" parent="11" name="is_bad">
+      <Position>3</Position>
+      <DataType>bool|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="45" parent="11" name="dir_id">
+      <Position>4</Position>
+      <DataType>integer|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <index id="46" parent="11" name="workspace_directoryitem_dir_id_dfb42c69">
+      <ColNames>dir_id</ColNames>
+      <ColumnCollations></ColumnCollations>
+    </index>
+    <key id="47" parent="11">
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="48" parent="11">
+      <ColNames>dir_id</ColNames>
+      <RefTableName>workspace_directory</RefTableName>
+      <RefColNames>id</RefColNames>
+      <Deferrable>1</Deferrable>
+      <InitiallyDeferred>1</InitiallyDeferred>
+    </foreign-key>
+    <column id="49" parent="12" name="id">
+      <Position>1</Position>
+      <DataType>integer|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="50" parent="12" name="path">
+      <Position>2</Position>
+      <DataType>varchar(256)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="51" parent="12" name="dir_full">
+      <Position>3</Position>
+      <DataType>varchar(256)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="52" parent="12" name="dir_100">
+      <Position>4</Position>
+      <DataType>varchar(256)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <index id="53" parent="12" name="sqlite_autoindex_workspace_rootdirectory_1">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>path</ColNames>
+      <ColumnCollations></ColumnCollations>
+      <Unique>1</Unique>
+    </index>
+    <index id="54" parent="12" name="sqlite_autoindex_workspace_rootdirectory_2">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>dir_full</ColNames>
+      <ColumnCollations></ColumnCollations>
+      <Unique>1</Unique>
+    </index>
+    <key id="55" parent="12">
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <key id="56" parent="12">
+      <ColNames>path</ColNames>
+      <UnderlyingIndexName>sqlite_autoindex_workspace_rootdirectory_1</UnderlyingIndexName>
+    </key>
+    <key id="57" parent="12">
+      <ColNames>dir_full</ColNames>
+      <UnderlyingIndexName>sqlite_autoindex_workspace_rootdirectory_2</UnderlyingIndexName>
+    </key>
+  </database-model>
+</dataSource>

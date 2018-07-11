@@ -1,0 +1,10 @@
+<component name="ArtifactManager">
+  <artifact type="jar" build-on-make="true" name="jsonapp:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/jsonapp_jar</output-path>
+    <root id="archive" name="jsonapp.jar">
+      <element id="module-output" name="jsonapp" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/../java-json.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/../sqlite-jdbc-3.21.0.jar" path-in-jar="/" />
+    </root>
+  </artifact>
+</component>

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+
+<GridPane alignment="center" hgap="10" maxHeight="300.0" maxWidth="600.0" minHeight="300.0" minWidth="600.0" prefHeight="300.0" prefWidth="600.0" vgap="10" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
+    <columnConstraints>
+        <ColumnConstraints />
+    </columnConstraints>
+    <rowConstraints>
+        <RowConstraints />
+    </rowConstraints>
+    <children>
+        <Pane maxHeight="300.0" maxWidth="600.0" minHeight="300.0" minWidth="600.0" prefHeight="300.0" prefWidth="600.0">
+            <children>
+                <Button fx:id="btninputChooseDb" layoutX="24.0" layoutY="27.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="178.0" text="Select DataBase" />
+                <Label fx:id="labelDBFilePath" layoutX="24.0" layoutY="65.0" prefHeight="21.0" prefWidth="412.0" text="DB file: " />
+                <Button fx:id="btnOutputFile" layoutX="24.0" layoutY="112.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="178.0" text="Select output file" />
+                <Label fx:id="labelOutputFile" layoutX="24.0" layoutY="157.0" prefHeight="21.0" prefWidth="412.0" text="Output file: " />
+            <Button fx:id="btnStart" layoutX="211.0" layoutY="221.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="178.0" text="Go!" />
+            <Label fx:id="labelMsg" layoutX="211.0" layoutY="265.0" prefHeight="21.0" prefWidth="278.0" text="Messages:" />
+            <RadioButton fx:id="radioW" layoutX="14.0" layoutY="221.0" mnemonicParsing="false" selected="true" text="Windows">
+               <toggleGroup>
+                  <ToggleGroup fx:id="operationSystem" />
+               </toggleGroup>
+            </RadioButton>
+            <RadioButton fx:id="radioL" layoutX="14.0" layoutY="255.0" mnemonicParsing="false" text="Linux" toggleGroup="$operationSystem" />
+            </children>
+        </Pane>
+    </children>
+</GridPane>
